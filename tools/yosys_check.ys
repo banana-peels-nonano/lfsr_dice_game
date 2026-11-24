@@ -1,0 +1,10 @@
+# synthesizability / latch check with yosys. NOT a substitute for vivado:
+# cell counts are yosys' 7-series mapping, no timing, no placement.
+read_verilog rtl/lfsr16.v rtl/die_mapper.v rtl/dice_roller.v rtl/score_engine.v rtl/dice_game.v rtl/btn_conditioner.v rtl/seg7_mux4.v rtl/top_module.v
+hierarchy -check -top top_module
+proc
+select -assert-none t:$dlatch t:$adlatch t:$dlatchsr
+check -assert
+synth_xilinx -family xc7 -top top_module -flatten
+select -assert-none t:LDCE t:LDPE
+stat

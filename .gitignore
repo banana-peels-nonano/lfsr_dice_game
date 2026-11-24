@@ -1,0 +1,39 @@
+# simulation outputs (regenerate with ./sim/run_sim.sh)
+sim/out/
+*.vvp
+*.vcd
+*.fst
+*.wdb
+
+# vivado project / run artefacts (recreate with vivado/create_project.tcl)
+vivado_proj/
+*.xpr
+*.cache/
+*.hw/
+*.ip_user_files/
+*.runs/
+*.sim/
+*.gen/
+*.srcs/
+.Xil/
+xsim.dir/
+*.jou
+*.str
+*.pb
+webtalk*
+usage_statistics_webtalk.*
+vivado*.log
+xsim*.log
+xvlog.*
+xelab.*
+
+# python
+__pycache__/
+*.pyc
+
+# editors / os
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
